@@ -1,0 +1,8 @@
+#spring.application.name=practice-consumeApi-webclient
+
+spring:
+  application:
+    name: practice-consumeApi-webclient
+
+server:
+  port: 8083
