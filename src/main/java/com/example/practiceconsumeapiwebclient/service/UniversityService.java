@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestClient;
@@ -16,6 +17,9 @@ public class UniversityService {
 
     private final RestClient restClient;
 
+//    @Autowired
+//    private ClassService classService;
+
     public UniversityService(RestClient restClient) {
         this.restClient = restClient;
     }
@@ -26,6 +30,10 @@ public class UniversityService {
                 .retrieve()
                 .body(Student.class);
     }
+
+//    public Student getStudent(Integer id) {
+//        return classService.getStudent(id);
+//    }
 
     public Student addStudent(Student student) {
         return restClient.post()
